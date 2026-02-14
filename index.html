@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DaySpring Church Community</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>DaySpring</h1>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<div class="hero">
+    <h2>Welcome to DaySpring Church Community</h2>
+    <p>A place of hope, faith, and new beginnings.</p>
+    <button class="btn" onclick="scrollToSection('about')">Learn More</button>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h3 class="section-title">About Us</h3>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=800&q=80" alt="Church Community">
+        <div class="about-text">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                eu fugiat nulla pariatur.
+            </p>
+            <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+                deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. 
+                Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra.
+            </p>
+            <p>
+                Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate 
+                vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula 
+                eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. 
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h3 class="section-title">Service Schedule</h3>
+    <div class="services">
+        <div class="card">
+            <h4>Sunday Worship</h4>
+            <p>9:00 AM & 5:00 PM</p>
+        </div>
+        <div class="card">
+            <h4>Midweek Service</h4>
+            <p>Wednesday 7:00 PM</p>
+        </div>
+        <div class="card">
+            <h4>Youth Fellowship</h4>
+            <p>Friday 6:30 PM</p>
+        </div>
+    </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+    <h3 class="section-title">Upcoming Events</h3>
+    <div class="events">
+        <div class="event">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" alt="Event 1">
+            <h4>Community Outreach</h4>
+            <p>Serving and blessing our neighborhood.</p>
+        </div>
+        <div class="event">
+            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80" alt="Event 2">
+            <h4>Prayer Night</h4>
+            <p>An evening of worship and prayer.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h3 class="section-title">Contact Us</h3>
+    <div class="contact">
+        <p>📍 123 Hope Street, Your City</p>
+        <p>📞 (123) 456-7890</p>
+        <p>📧 info@dayspringchurch.org</p>
+        <button class="btn" id="openForm">Send a Message</button>
+    </div>
+</section>
+
+<!-- CONTACT MODAL -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Send Us a Message</h3>
+
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea style="resize: none;" name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+    <p class="success-message" id="successMessage"></p>
+  </div>
+</div>
+
+
+<footer>
+    © 2026 DaySpring Church Community | All Rights Reserved
+</footer>
+
+<!-- External JS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
