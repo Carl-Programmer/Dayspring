@@ -88,3 +88,45 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
         console.log(error);
     });
 });
+
+// =========================
+// SMART AUTO-SLIDING EVENTS
+// =========================
+// =========================
+// FINAL WORKING INFINITE SLIDER
+// =========================
+
+const slider = document.querySelector(".events");
+
+if (slider) {
+
+    const cards = Array.from(slider.children);
+
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+
+        // 🔥 Remove hidden class from clones
+        clone.classList.remove("hidden");
+
+        slider.appendChild(clone);
+    });
+
+    let speed = 0.5;
+    let isPaused = false;
+
+    function animate() {
+        if (!isPaused) {
+            slider.scrollLeft += speed;
+
+            if (slider.scrollLeft >= slider.scrollWidth / 2) {
+                slider.scrollLeft = 1;
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    slider.addEventListener("mouseenter", () => isPaused = true);
+    slider.addEventListener("mouseleave", () => isPaused = false);
+}

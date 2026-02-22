@@ -159,12 +159,30 @@ section {
 #services {
   margin-bottom: 100px;
 }
-
 /* EVENTS */
 .events {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
   gap: 2rem;
+  overflow: hidden; /* 🔥 CHANGE THIS */
+  padding-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.events::-webkit-scrollbar {
+  display: none;
+}
+.events {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Keep cards SMALL like before */
+.event {
+  flex: 0 0 380px; /* exact width like your old minmax(280px) */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .event img {
@@ -178,13 +196,46 @@ section {
 
 #events {
   background-color: var(--primary);
+  position: relative;
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.event {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+/* Fade shadow edges for slider */
+#events::before,
+#events::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#events::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--primary) 0%,
+    rgba(135, 206, 235, 0) 100%
+  );
+}
+
+#events::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--primary) 0%,
+    rgba(135, 206, 235, 0) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .event {
+    flex: 0 0 280px;
+  }
 }
 
 /* CONTACT */
